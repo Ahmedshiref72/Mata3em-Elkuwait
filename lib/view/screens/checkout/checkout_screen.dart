@@ -60,16 +60,13 @@ class CheckoutScreenState extends State<CheckoutScreen> {
   final TextEditingController _houseController = TextEditingController();
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _areaController = TextEditingController();
-  final TextEditingController _last_nameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _blocController = TextEditingController();
   final TextEditingController _floorController = TextEditingController();
   final TextEditingController _avenueController = TextEditingController();
   final TextEditingController _apartmentController = TextEditingController();
   final TextEditingController _sideController = TextEditingController();
-  final FocusNode _streetNode = FocusNode();
-  final FocusNode _houseNode = FocusNode();
-  final FocusNode _floorNode = FocusNode();
   double? _taxPercent = 0;
   bool? _isCashOnDeliveryActive;
   bool? _isDigitalPaymentActive;
@@ -855,7 +852,7 @@ class CheckoutScreenState extends State<CheckoutScreen> {
                               titleText: 'last_name'.tr,
                               inputType: TextInputType.text,
                               inputAction: TextInputAction.done,
-                              controller: _last_nameController,
+                              controller: _lastNameController,
                             ),
                           ),
                         ],
@@ -1740,7 +1737,7 @@ class CheckoutScreenState extends State<CheckoutScreen> {
               if (_firstNameController.text.isEmpty) {
                 showCustomSnackBar('enter_first_name'.tr);
               }
-              if (_last_nameController.text.isEmpty) {
+              if (_lastNameController.text.isEmpty) {
                 showCustomSnackBar('enter_last_name'.tr);
               }
               if (_phoneController.text.isEmpty) {
@@ -1973,7 +1970,7 @@ class CheckoutScreenState extends State<CheckoutScreen> {
                       cutlery: Get.find<CartController>().addCutlery ? 1 : 0,
                       house: _houseController.text.trim(),
                       floor: _floorController.text.trim(),
-                      lname: _last_nameController.text.trim(),
+                      lname: _lastNameController.text.trim(),
                       fname: _firstNameController.text.trim(),
                       side: _sideController.text.trim(),
                       bloc: _blocController.text.trim(),
