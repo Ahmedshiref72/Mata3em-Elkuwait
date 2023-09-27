@@ -37,6 +37,7 @@ import 'package:efood_multivendor/view/screens/checkout/widget/subscription_view
 import 'package:efood_multivendor/view/screens/checkout/widget/time_slot_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:just_the_tooltip/just_the_tooltip.dart';
 import 'package:universal_html/html.dart' as html;
 
@@ -765,77 +766,128 @@ class CheckoutScreenState extends State<CheckoutScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text('deliver_to'.tr, style: robotoMedium),
-/*
-              InkWell(
-                onTap: () async{
-                  var address = await Get.toNamed(RouteHelper.getAddAddressRoute(true, restController.restaurant!.zoneId));
-                  if(address != null){
-                    _streetNumberController.text = address.road ?? '';
-                    _houseController.text = address.house ?? '';
-                    _floorController.text = address.floor ?? '';
+                            /* InkWell(
+                              onTap: () async {
+                                var address = await Get.toNamed(
+                                    RouteHelper.getAddAddressRoute(true,
+                                        restController.restaurant!.zoneId));
+                                if (address != null) {
+                                  _streetNumberController.text =
+                                      address.road ?? '';
+                                  _houseController.text = address.house ?? '';
+                                  _floorController.text = address.floor ?? '';
 
-                    orderController.getDistanceInMeter(
-                      LatLng(double.parse(address.latitude), double.parse(address.longitude )),
-                      LatLng(double.parse(restController.restaurant!.latitude!), double.parse(restController.restaurant!.longitude!)),
-                    );
-                  }
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeSmall),
-                  child: Row(children: [
-                    Icon(Icons.add, size: 20, color: Theme.of(context).primaryColor),
-                    const SizedBox(width: Dimensions.paddingSizeExtraSmall),
-                    Text('add_new'.tr, style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor)),
-                  ]),
-                ),
-              ),
-*/
+                                  orderController.getDistanceInMeter(
+                                    LatLng(double.parse(address.latitude),
+                                        double.parse(address.longitude)),
+                                    LatLng(
+                                        double.parse(restController
+                                            .restaurant!.latitude!),
+                                        double.parse(restController
+                                            .restaurant!.longitude!)),
+                                  );
+                                }
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: Dimensions.paddingSizeSmall),
+                                child: Row(children: [
+                                  Icon(Icons.add,
+                                      size: 20,
+                                      color: Theme.of(context).primaryColor),
+                                  const SizedBox(
+                                      width: Dimensions.paddingSizeExtraSmall),
+                                  Text('add_new'.tr,
+                                      style: robotoMedium.copyWith(
+                                          fontSize: Dimensions.fontSizeSmall,
+                                          color:
+                                              Theme.of(context).primaryColor)),
+                                ]),
+                              ),
+                            ),*/
                           ]),
+                      Container(
+                        constraints: BoxConstraints(
+                            minHeight:
+                                ResponsiveHelper.isDesktop(context) ? 90 : 75),
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(Dimensions.radiusDefault),
+                          color:
+                              Theme.of(context).primaryColor.withOpacity(0.1),
+                        ),
+                        child: CustomDropdown<int>(
+                          onChange: (int? value, int index) {
+                            if (restController.restaurant!.selfDeliverySystem ==
+                                0) {
+                              orderController.getDistanceInMeter(
+                                LatLng(
+                                  double.parse(index == 0
+                                      ? locationController
+                                          .getUserAddress()!
+                                          .latitude!
+                                      : address[index].latitude!),
+                                  double.parse(index == 0
+                                      ? locationController
+                                          .getUserAddress()!
+                                          .longitude!
+                                      : address[index].longitude!),
+                                ),
+                                LatLng(
+                                    double.parse(
+                                        restController.restaurant!.latitude!),
+                                    double.parse(
+                                        restController.restaurant!.longitude!)),
+                              );
+                            }
+                            orderController.setAddressIndex(index);
 
-                      /*  Container(
-              constraints: BoxConstraints(minHeight: ResponsiveHelper.isDesktop(context) ? 90 : 75),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
-                color: Theme.of(context).primaryColor.withOpacity(0.1),
-              ),
-              child: CustomDropdown<int>(
-                onChange: (int? value, int index) {
-                  if(restController.restaurant!.selfDeliverySystem == 0) {
-                    orderController.getDistanceInMeter(
-                      LatLng(
-                        double.parse(index == 0 ? locationController.getUserAddress()!.latitude! : address[index].latitude!),
-                        double.parse(index == 0 ? locationController.getUserAddress()!.longitude! : address[index].longitude!),
+                            _streetNumberController.text = orderController
+                                        .addressIndex ==
+                                    0
+                                ? locationController.getUserAddress()!.road ??
+                                    ''
+                                : address[orderController.addressIndex].road ??
+                                    '';
+                            _houseController.text = orderController
+                                        .addressIndex ==
+                                    0
+                                ? locationController.getUserAddress()!.house ??
+                                    ''
+                                : address[orderController.addressIndex].house ??
+                                    '';
+                            _floorController.text = orderController
+                                        .addressIndex ==
+                                    0
+                                ? locationController.getUserAddress()!.floor ??
+                                    ''
+                                : address[orderController.addressIndex].floor ??
+                                    '';
+                          },
+                          dropdownButtonStyle: DropdownButtonStyle(
+                            height: 50,
+                            padding: const EdgeInsets.symmetric(
+                              vertical: Dimensions.paddingSizeExtraSmall,
+                              horizontal: Dimensions.paddingSizeExtraSmall,
+                            ),
+                            primaryColor:
+                                Theme.of(context).textTheme.bodyLarge!.color,
+                          ),
+                          dropdownStyle: DropdownStyle(
+                            elevation: 10,
+                            borderRadius:
+                                BorderRadius.circular(Dimensions.radiusDefault),
+                            padding: const EdgeInsets.all(
+                                Dimensions.paddingSizeExtraSmall),
+                          ),
+                          items: addressList,
+                          child: AddressWidget(
+                            address: address[orderController.addressIndex],
+                            fromAddress: false,
+                            fromCheckout: true,
+                          ),
+                        ),
                       ),
-                      LatLng(double.parse(restController.restaurant!.latitude!), double.parse(restController.restaurant!.longitude!)),
-                    );
-                  }
-                  orderController.setAddressIndex(index);
-
-                  _streetNumberController.text = orderController.addressIndex == 0 ? locationController.getUserAddress()!.road ?? '' : address[orderController.addressIndex].road ?? '';
-                  _houseController.text = orderController.addressIndex == 0 ? locationController.getUserAddress()!.house ?? '' : address[orderController.addressIndex].house ?? '';
-                  _floorController.text = orderController.addressIndex == 0 ? locationController.getUserAddress()!.floor ?? '' : address[orderController.addressIndex].floor ?? '';
-
-                },
-                dropdownButtonStyle: DropdownButtonStyle(
-                  height: 50,
-                  padding: const EdgeInsets.symmetric(
-                    vertical: Dimensions.paddingSizeExtraSmall,
-                    horizontal: Dimensions.paddingSizeExtraSmall,
-                  ),
-                  primaryColor: Theme.of(context).textTheme.bodyLarge!.color,
-                ),
-                dropdownStyle: DropdownStyle(
-                  elevation: 10,
-                  borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
-                  padding: const EdgeInsets.all(Dimensions.paddingSizeExtraSmall),
-                ),
-                items: addressList,
-                child: AddressWidget(
-                  address: address[orderController.addressIndex],
-                  fromAddress: false, fromCheckout: true,
-                ),
-              ),
-            ),*/
                       const SizedBox(height: Dimensions.paddingSizeDefault),
                       Row(
                         children: [
@@ -1731,7 +1783,7 @@ class CheckoutScreenState extends State<CheckoutScreen> {
               bool isAvailable = true;
               DateTime scheduleStartDate = DateTime.now();
               DateTime scheduleEndDate = DateTime.now();
-              if (_streetNumberController.text.isEmpty) {
+           /*   if (_streetNumberController.text.isEmpty) {
                 showCustomSnackBar('enter_street_number'.tr);
               }
               if (_firstNameController.text.isEmpty) {
@@ -1757,7 +1809,7 @@ class CheckoutScreenState extends State<CheckoutScreen> {
               }
               if (_apartmentController.text.isEmpty) {
                 showCustomSnackBar('enter_apartment_number'.tr);
-              }
+              }*/
 
               if (orderController.timeSlots == null ||
                   orderController.timeSlots!.isEmpty) {
