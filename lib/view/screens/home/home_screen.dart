@@ -319,7 +319,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             children: [
                                               Padding(
                                                 padding:
-                                                    const EdgeInsets.all(10.0),
+                                                    const EdgeInsets.all(2.0),
                                                 child: Column(
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
@@ -369,11 +369,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   ],
                                                 ),
                                               ),
-                                              Spacer(),
                                               Image(
                                                 image: AssetImage(
                                                     'assets/image/delivery_location.png'),
-                                                width: 160,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.35,
                                               ),
                                             ],
                                           ),

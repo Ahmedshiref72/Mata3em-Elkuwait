@@ -6,9 +6,11 @@ import 'package:get/get.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 
 import '../../../../controller/splash_controller.dart';
+import '../../../../helper/responsive_helper.dart';
 import '../../../../helper/route_helper.dart';
 import '../../../../util/styles.dart';
 import '../../../base/custom_image.dart';
+import 'category_pop_up.dart';
 
 class CategoryView extends StatelessWidget {
   const CategoryView({Key? key}) : super(key: key);
@@ -113,7 +115,7 @@ class CategoryView extends StatelessWidget {
                                 categoryController: categoryController),
                       ),
                     ),
-                    /*  categoryController.categoryList != null
+                    categoryController.categoryList != null
                         ? Container(
                             width: MediaQuery.of(context).size.width,
                             height: 260,
@@ -122,8 +124,7 @@ class CategoryView extends StatelessWidget {
                               shrinkWrap: true,
                               gridDelegate:
                                   SliverGridDelegateWithFixedCrossAxisCount(
-                                //  mainAxisSpacing: 35,
-
+                                mainAxisSpacing: 10,
                                 crossAxisCount:
                                     ResponsiveHelper.isDesktop(context)
                                         ? 6
@@ -150,108 +151,96 @@ class CategoryView extends StatelessWidget {
                                           .categoryList![index].name!,
                                     )),
                                     child: SizedBox(
-                                      child: Column(children: [
-                                        Container(
-                                            height: 120,
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                .45,
-                                            margin: EdgeInsets.only(
-                                              left: Dimensions
-                                                  .paddingSizeExtraSmall,
-                                              right: Dimensions
-                                                  .paddingSizeExtraSmall,
+                                      child: Container(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              .45,
+                                          margin: EdgeInsets.only(
+                                            left: Dimensions
+                                                .paddingSizeExtraSmall,
+                                            right: Dimensions
+                                                .paddingSizeExtraSmall,
+                                          ),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              color: Colors.grey.shade200,
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
                                             ),
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                color: Colors.grey.shade200,
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                        Dimensions.radiusSmall),
-                                              ),
-                                              child: Row(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Column(
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(
-                                                                top: 10,
-                                                                right: 10,
-                                                                left: 10.0),
-                                                        child: Column(
-                                                          children: [
-                                                            Text(
-                                                              categoryController
-                                                                  .categoryList![
-                                                                      index]
-                                                                  .name!,
-                                                              style: robotoMedium
-                                                                  .copyWith(
-                                                                      fontSize:
-                                                                          18),
-                                                              maxLines: 1,
-                                                              overflow:
-                                                                  TextOverflow
-                                                                      .ellipsis,
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                            ),
-                                                            Container(
-                                                              width: 50,
-                                                              height: 20,
-                                                              decoration: BoxDecoration(
-                                                                  color: Color(
-                                                                      0xFFfe0000),
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              25)),
-                                                              child: Center(
-                                                                  child: Text(
-                                                                'New'.tr,
-                                                                style: TextStyle(
+                                            child: Stack(
+                                              children: [
+                                                Column(
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              top: 20,
+                                                              right: 10,
+                                                              left: 10.0),
+                                                      child: Column(
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Text(
+                                                            categoryController
+                                                                .categoryList![
+                                                                    index]
+                                                                .name!,
+                                                            style: robotoMedium
+                                                                .copyWith(
                                                                     fontSize:
-                                                                        12,
-                                                                    color: Colors
-                                                                        .white),
-                                                              )),
-                                                            )
-                                                          ],
-                                                        ),
+                                                                        18),
+                                                            maxLines: 1,
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                          ),
+                                                          const SizedBox(
+                                                              height: 15),
+                                                          Container(
+                                                            width: 50,
+                                                            height: 20,
+                                                            decoration: BoxDecoration(
+                                                                color: Theme.of(
+                                                                        context)
+                                                                    .primaryColor,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            25)),
+                                                            child: Center(
+                                                                child: Text(
+                                                              'New'.tr,
+                                                              style: TextStyle(
+                                                                  fontSize: 12,
+                                                                  color: Colors
+                                                                      .white),
+                                                            )),
+                                                          )
+                                                        ],
                                                       ),
-                                                    ],
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            8.0),
-                                                    child: CustomImage(
-                                                      image:
-                                                          '${Get.find<SplashController>().configModel!.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image}',
-                                                      height: 100,
-                                                      width: 85,
-                                                      fit: BoxFit.cover,
                                                     ),
+                                                  ],
+                                                ),
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.9, 0.2),
+                                                  child: CustomImage(
+                                                    image:
+                                                        '${Get.find<SplashController>().configModel!.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image}',
+                                                    height: 80,
+                                                    width: 80,
+                                                    fit: BoxFit.contain,
                                                   ),
-                                                ],
-                                              ),
-                                            )
-                                            */ /* ClipRRect(
-                                borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
-
-                                child: CustomImage(
-                                  image: '${Get.find<SplashController>().configModel!.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image}',
-                                  height: 80, width: 140,
-                                ),
-                              ),*/ /*
+                                                ),
+                                              ],
                                             ),
-                                      ]),
+                                          )),
                                     ),
                                   ),
                                 );
@@ -300,7 +289,7 @@ class CategoryView extends StatelessWidget {
                                 ],
                               )
                             : CategoryAllShimmer(
-                                categoryController: categoryController)*/
+                                categoryController: categoryController)
                   ],
                 ),
               ],
