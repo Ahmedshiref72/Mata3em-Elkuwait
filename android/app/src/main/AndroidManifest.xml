@@ -25,12 +25,12 @@
     </queries>
 
     <application
-        android:label="Talabat Sweets"
+        android:label="مطاعم الكويت"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAhK-GowkkBVFX_EJ42enQGb77q58uvhBI"/>
+            android:value="AIzaSyCX3JeW9bpasQrhBXDubyI68AmV-uEhS0o"/>
 
         <activity
             android:name=".MainActivity"

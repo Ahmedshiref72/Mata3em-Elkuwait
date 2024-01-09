@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'package:efood_multivendor/controller/auth_controller.dart';
 import 'package:efood_multivendor/controller/cart_controller.dart';
 import 'package:efood_multivendor/controller/localization_controller.dart';
@@ -15,7 +16,6 @@ import 'package:efood_multivendor/theme/dark_theme.dart';
 import 'package:efood_multivendor/theme/light_theme.dart';
 import 'package:efood_multivendor/util/app_constants.dart';
 import 'package:efood_multivendor/util/messages.dart';
-import 'package:efood_multivendor/view/base/cookies_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/gestures.dart';
@@ -25,6 +25,7 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:url_strategy/url_strategy.dart';
+
 import 'helper/get_di.dart' as di;
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -150,19 +151,6 @@ class MyApp extends StatelessWidget {
                   builder: (BuildContext context, widget) => Material(
                     child: Stack(children: [
                       widget!,
-                      GetBuilder<SplashController>(builder: (splashController) {
-                        if (!splashController.savedCookiesData &&
-                            !splashController.getAcceptCookiesStatus(
-                                splashController.configModel!.cookiesText!)) {
-                          return ResponsiveHelper.isWeb()
-                              ? const Align(
-                                  alignment: Alignment.bottomCenter,
-                                  child: CookiesView())
-                              : const SizedBox();
-                        } else {
-                          return const SizedBox();
-                        }
-                      })
                     ]),
                   ),
                 );

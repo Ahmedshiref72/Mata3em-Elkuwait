@@ -132,12 +132,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           floating: true,
                           elevation: 0,
                           automaticallyImplyLeading: false,
-                          backgroundColor: Color(0XFFffeee6),
+                          backgroundColor: Color(0XFFfef4cf),
                           title: Center(
                               child: Container(
                             width: Dimensions.webMaxWidth,
                             height: 50,
-                            color: Color(0XFFffeee6),
+                            color: Color(0XFFfef4cf),
                             child: Row(children: [
                               Expanded(
                                   child: InkWell(
@@ -250,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child: Container(
                             height: 50,
                             width: Dimensions.webMaxWidth,
-                            color: Color(0XFFffeee6),
+                            color: Color(0XFFfef4cf),
                             padding: const EdgeInsets.symmetric(
                                 horizontal: Dimensions.paddingSizeSmall),
                             child: InkWell(
@@ -262,7 +262,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: Dimensions.paddingSizeSmall),
                                   decoration: BoxDecoration(
-                                    color: Color(0XFFffeee6),
+                                    color: Color(0XFFfef4cf),
                                     borderRadius: BorderRadius.circular(
                                         Dimensions.radiusSmall),
                                     border: Border.all(color: Colors.white),
@@ -298,17 +298,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
-                                    color: Color(0XFFffeee6),
+                                    color: Color(0XFFfef4cf),
                                     height: 10,
                                   ),
                                   Get.find<AuthController>().isLoggedIn()
                                       ? Container(
-                                          color: Color(0XFFffeee6),
+                                          color: Color(0XFFfef4cf),
                                           height: 10,
                                         )
                                       : Container(
                                           decoration: BoxDecoration(
-                                              color: Color(0XFFffeee6)),
+                                            color: Color(0XFFfef4cf),
+                                          ),
                                           height: 170,
                                           child: Row(
                                             mainAxisAlignment:
@@ -348,7 +349,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                               top: 8.0),
                                                       child: CustomButton(
                                                           color:
-                                                              Color(0xFFfe0000),
+                                                              Theme.of(context)
+                                                                  .primaryColor,
                                                           fontSize: 12,
                                                           buttonText:
                                                               'sign_in'.tr,

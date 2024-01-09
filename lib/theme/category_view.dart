@@ -30,13 +30,6 @@ class _Shortcuts2State extends State<Shortcuts2> {
     // Add more icons as needed
   ];
 
-/*  final List<String> texts = [
-    "",
-    "",
-    "",
-    // Add more icons as needed
-  ];*/
-
   get searchController => null;
 
   void _onItemTapped(int index) {
@@ -134,13 +127,14 @@ class _Shortcuts2State extends State<Shortcuts2> {
                                               child: Icon(
                                                 icons[index],
                                                 size: 50,
-                                                color: Color(0xFFfe0000),
+                                                color: Theme.of(context)
+                                                    .primaryColor,
                                               ),
                                             ),
                                             height: 75,
                                             width: 120,
                                             decoration: BoxDecoration(
-                                              color: Color(0XFFffeee6),
+                                              color: Color(0XFFfef4cf),
                                               borderRadius:
                                                   BorderRadius.circular(
                                                       Dimensions.radiusSmall),
