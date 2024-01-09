@@ -61,7 +61,6 @@ class _HtmlViewerScreenState extends State<HtmlViewerScreen> {
                   (splashController.htmlText!.contains('<ol>') || splashController.htmlText!.contains('<ul>')) ? HtmlWidget(
                     splashController.htmlText ?? '',
                     key: Key(widget.htmlType.toString()),
-                    isSelectable: true,
                     onTapUrl: (String url) {
                       return launchUrlString(url, mode: LaunchMode.externalApplication);
                     },
