@@ -34,7 +34,7 @@ class CategoryView extends StatelessWidget {
                   children: [
                     Expanded(
                       child: SizedBox(
-                          height: 150,
+                          height: 150 + 40,
                           child: categoryController.categoryList != null
                               ? ListView.builder(
                                   controller: scrollController,
@@ -54,11 +54,11 @@ class CategoryView extends StatelessWidget {
                                       child: InkWell(
                                         onTap: () => Get.toNamed(
                                             RouteHelper.getCategoryProductRoute(
-                                              categoryController
-                                                  .categoryList![index].id,
-                                              categoryController
-                                                  .categoryList![index].name!,
-                                            )),
+                                          categoryController
+                                              .categoryList![index].id,
+                                          categoryController
+                                              .categoryList![index].name!,
+                                        )),
                                         child: Column(
                                           children: [
                                             Stack(
@@ -69,28 +69,27 @@ class CategoryView extends StatelessWidget {
                                                       height: 110,
                                                       width: 110,
                                                       decoration: BoxDecoration(
-                                                        color:
-                                                        Colors.grey.shade200,
+                                                        color: Colors
+                                                            .grey.shade200,
                                                         borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
+                                                            BorderRadius
+                                                                .circular(10),
                                                       ),
                                                       margin: EdgeInsets.only(
                                                         left: index == 0
                                                             ? 0
                                                             : Dimensions
-                                                            .paddingSizeExtraSmall,
+                                                                .paddingSizeExtraSmall,
                                                         right: Dimensions
                                                             .paddingSizeExtraSmall,
                                                       ),
                                                       child: ClipRRect(
-                                                        borderRadius:
-                                                        BorderRadius.circular(
-                                                            Dimensions
+                                                        borderRadius: BorderRadius
+                                                            .circular(Dimensions
                                                                 .radiusSmall),
                                                         child: CustomImage(
                                                           image:
-                                                          '${Get.find<SplashController>().configModel!.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image}',
+                                                              '${Get.find<SplashController>().configModel!.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image}',
                                                           height: 120,
                                                           width: 120,
                                                           fit: BoxFit.contain,
@@ -112,15 +111,15 @@ class CategoryView extends StatelessWidget {
                                                         color: Theme.of(context)
                                                             .primaryColor,
                                                         borderRadius:
-                                                        BorderRadius.circular(
-                                                            25)),
+                                                            BorderRadius
+                                                                .circular(25)),
                                                     child: Center(
                                                         child: Text(
-                                                          'New'.tr,
-                                                          style: const TextStyle(
-                                                              fontSize: 12,
-                                                              color: Colors.white),
-                                                        )),
+                                                      'New'.tr,
+                                                      style: const TextStyle(
+                                                          fontSize: 12,
+                                                          color: Colors.white),
+                                                    )),
                                                   ),
                                                 )
                                               ],
@@ -129,7 +128,7 @@ class CategoryView extends StatelessWidget {
                                               padding: EdgeInsets.only(
                                                   right: index == 0
                                                       ? Dimensions
-                                                      .paddingSizeExtraSmall
+                                                          .paddingSizeExtraSmall
                                                       : 0),
                                               child: Text(
                                                 categoryController
@@ -148,7 +147,7 @@ class CategoryView extends StatelessWidget {
                                   },
                                 )
                               : Padding(
-                                  padding: const EdgeInsets.all(20.0),
+                                  padding: const EdgeInsets.only(top: 40),
                                   child: ListView.builder(
                                     itemCount: 4,
                                     padding: const EdgeInsets.only(
@@ -189,14 +188,10 @@ class CategoryView extends StatelessWidget {
                                                         ? Dimensions
                                                             .paddingSizeExtraSmall
                                                         : 0),
-                                                child: Text(
-                                                  '',
-                                                  style: robotoMedium.copyWith(
-                                                      fontSize: 20),
-                                                  maxLines: 2,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.center,
+                                                child: Container(
+                                                  height: 10,
+                                                  width: 50,
+                                                  color: Colors.grey.shade200,
                                                 ),
                                               ),
                                             ]),
