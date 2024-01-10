@@ -34,17 +34,13 @@ class CategoryView extends StatelessWidget {
                   children: [
                     Expanded(
                       child: SizedBox(
-                          height: 150 + 40,
-                          child: categoryController.categoryList != null
-                              ? ListView.builder(
+                          height: 123,
+                          child: categoryController.categoryList != null                              ? ListView.builder(
                                   controller: scrollController,
                                   itemCount: categoryController
-                                              .categoryList!.length >
-                                          15
-                                      ? 15
-                                      : categoryController.categoryList!.length,
-                                  padding: const EdgeInsets.only(
-                                      left: Dimensions.paddingSizeSmall),
+                                              .categoryList!.length,
+                                  padding: const EdgeInsetsDirectional.only(
+                                      start: Dimensions.paddingSizeSmall),
                                   physics: const BouncingScrollPhysics(),
                                   scrollDirection: Axis.horizontal,
                                   itemBuilder: (context, index) {
@@ -66,8 +62,8 @@ class CategoryView extends StatelessWidget {
                                                 Column(
                                                   children: [
                                                     Container(
-                                                      height: 110,
-                                                      width: 110,
+                                                      height: 80,
+                                                      width: 80,
                                                       decoration: BoxDecoration(
                                                         color: Colors
                                                             .grey.shade200,
@@ -103,7 +99,7 @@ class CategoryView extends StatelessWidget {
                                                 ),
                                                 Positioned.fill(
                                                   bottom: -0,
-                                                  top: 100,
+                                                  top: 75,
                                                   left: 15,
                                                   right: 15,
                                                   child: Container(
@@ -147,11 +143,11 @@ class CategoryView extends StatelessWidget {
                                   },
                                 )
                               : Padding(
-                                  padding: const EdgeInsets.only(top: 40),
+                                  padding: const EdgeInsets.only(top: 0),
                                   child: ListView.builder(
                                     itemCount: 4,
-                                    padding: const EdgeInsets.only(
-                                        left: Dimensions.paddingSizeSmall),
+                                    padding: const EdgeInsetsDirectional.only(
+                                        start: Dimensions.paddingSizeSmall),
                                     physics: const BouncingScrollPhysics(),
                                     scrollDirection: Axis.horizontal,
                                     itemBuilder: (context, index) {
@@ -159,43 +155,40 @@ class CategoryView extends StatelessWidget {
                                         padding: const EdgeInsets.symmetric(
                                             horizontal: 1),
                                         child: Stack(children: [
-                                          SizedBox(
-                                            width: 100,
-                                            child: Column(children: [
-                                              Container(
-                                                height: 110,
-                                                width: 110,
-                                                decoration: BoxDecoration(
-                                                  color: Colors.grey.shade200,
-                                                  borderRadius:
-                                                      BorderRadius.circular(10),
-                                                ),
-                                                margin: EdgeInsets.only(
-                                                  left: index == 0
-                                                      ? 0
-                                                      : Dimensions
-                                                          .paddingSizeExtraSmall,
-                                                  right: Dimensions
-                                                      .paddingSizeExtraSmall,
-                                                ),
+                                          Column(children: [
+                                            Container(
+                                              height: 80,
+                                              width: 80,
+                                              decoration: BoxDecoration(
+                                                color: Colors.grey.shade200,
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
                                               ),
-                                              const SizedBox(
-                                                  height: Dimensions
-                                                      .paddingSizeSmall),
-                                              Padding(
-                                                padding: EdgeInsets.only(
-                                                    right: index == 0
-                                                        ? Dimensions
-                                                            .paddingSizeExtraSmall
-                                                        : 0),
-                                                child: Container(
-                                                  height: 10,
-                                                  width: 50,
-                                                  color: Colors.grey.shade200,
-                                                ),
+                                              margin: EdgeInsets.only(
+                                                left: index == 0
+                                                    ? 0
+                                                    : Dimensions
+                                                        .paddingSizeExtraSmall,
+                                                right: Dimensions
+                                                    .paddingSizeExtraSmall,
                                               ),
-                                            ]),
-                                          ),
+                                            ),
+                                            const SizedBox(
+                                                height: Dimensions
+                                                    .paddingSizeSmall),
+                                            Padding(
+                                              padding: EdgeInsets.only(
+                                                  right: index == 0
+                                                      ? Dimensions
+                                                          .paddingSizeExtraSmall
+                                                      : 0),
+                                              child: Container(
+                                                height: 10,
+                                                width: 50,
+                                                color: Colors.grey.shade200,
+                                              ),
+                                            ),
+                                          ]),
                                         ]),
                                       );
                                     },
