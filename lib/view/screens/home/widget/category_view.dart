@@ -34,118 +34,178 @@ class CategoryView extends StatelessWidget {
                   children: [
                     Expanded(
                       child: SizedBox(
-                        height: 150,
-                        child: categoryController.categoryList != null
-                            ? ListView.builder(
-                                controller: scrollController,
-                                itemCount:
-                                    categoryController.categoryList!.length > 15
-                                        ? 15
-                                        : categoryController
-                                            .categoryList!.length,
-                                padding: const EdgeInsets.only(
-                                    left: Dimensions.paddingSizeSmall),
-                                physics: const BouncingScrollPhysics(),
-                                scrollDirection: Axis.horizontal,
-                                itemBuilder: (context, index) {
-                                  return Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 1),
-                                    child: InkWell(
-                                      onTap: () => Get.toNamed(
-                                          RouteHelper.getCategoryProductRoute(
-                                        categoryController
-                                            .categoryList![index].id,
-                                        categoryController
-                                            .categoryList![index].name!,
-                                      )),
-                                      child: Stack(children: [
-                                        SizedBox(
-                                          width: 100,
-                                          child: Column(children: [
-                                            Container(
-                                              height: 110,
-                                              width: 110,
-                                              decoration: BoxDecoration(
-                                                color: Colors.grey.shade200,
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                              ),
-                                              margin: EdgeInsets.only(
-                                                left: index == 0
-                                                    ? 0
-                                                    : Dimensions
-                                                        .paddingSizeExtraSmall,
-                                                right: Dimensions
-                                                    .paddingSizeExtraSmall,
-                                              ),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                        Dimensions.radiusSmall),
-                                                child: CustomImage(
-                                                  image:
-                                                      '${Get.find<SplashController>().configModel!.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image}',
-                                                  height: 120,
-                                                  width: 120,
-                                                  fit: BoxFit.contain,
+                          height: 150,
+                          child: categoryController.categoryList != null
+                              ? ListView.builder(
+                                  controller: scrollController,
+                                  itemCount: categoryController
+                                              .categoryList!.length >
+                                          15
+                                      ? 15
+                                      : categoryController.categoryList!.length,
+                                  padding: const EdgeInsets.only(
+                                      left: Dimensions.paddingSizeSmall),
+                                  physics: const BouncingScrollPhysics(),
+                                  scrollDirection: Axis.horizontal,
+                                  itemBuilder: (context, index) {
+                                    return Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 1),
+                                      child: InkWell(
+                                        onTap: () => Get.toNamed(
+                                            RouteHelper.getCategoryProductRoute(
+                                          categoryController
+                                              .categoryList![index].id,
+                                          categoryController
+                                              .categoryList![index].name!,
+                                        )),
+                                        child: Stack(children: [
+                                          SizedBox(
+                                            width: 100,
+                                            child: Column(children: [
+                                              Container(
+                                                height: 110,
+                                                width: 110,
+                                                decoration: BoxDecoration(
+                                                  color: Colors.grey.shade200,
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
                                                 ),
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                                height: Dimensions
-                                                    .paddingSizeSmall),
-                                            Padding(
-                                              padding: EdgeInsets.only(
-                                                  right: index == 0
-                                                      ? Dimensions
-                                                          .paddingSizeExtraSmall
-                                                      : 0),
-                                              child: Text(
-                                                categoryController
-                                                    .categoryList![index].name!,
-                                                style: robotoMedium.copyWith(
-                                                    fontSize: 20),
-                                                maxLines: 2,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.center,
-                                              ),
-                                            ),
-                                          ]),
-                                        ),
-                                        Positioned.fill(
-                                          bottom: 35,
-                                          top: 100,
-                                          child: Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 15),
-                                            child: Container(
-                                              width: 50,
-                                              height: 20,
-                                              decoration: BoxDecoration(
-                                                  color: Theme.of(context)
-                                                      .primaryColor,
+                                                margin: EdgeInsets.only(
+                                                  left: index == 0
+                                                      ? 0
+                                                      : Dimensions
+                                                          .paddingSizeExtraSmall,
+                                                  right: Dimensions
+                                                      .paddingSizeExtraSmall,
+                                                ),
+                                                child: ClipRRect(
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          25)),
-                                              child: Center(
-                                                  child: Text(
-                                                'New'.tr,
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    color: Colors.white),
-                                              )),
-                                            ),
+                                                          Dimensions
+                                                              .radiusSmall),
+                                                  child: CustomImage(
+                                                    image:
+                                                        '${Get.find<SplashController>().configModel!.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image}',
+                                                    height: 120,
+                                                    width: 120,
+                                                    fit: BoxFit.contain,
+                                                  ),
+                                                ),
+                                              ),
+                                              const SizedBox(
+                                                  height: Dimensions
+                                                      .paddingSizeSmall),
+                                              Padding(
+                                                padding: EdgeInsets.only(
+                                                    right: index == 0
+                                                        ? Dimensions
+                                                            .paddingSizeExtraSmall
+                                                        : 0),
+                                                child: Text(
+                                                  categoryController
+                                                      .categoryList![index]
+                                                      .name!,
+                                                  style: robotoMedium.copyWith(
+                                                      fontSize: 20),
+                                                  maxLines: 2,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                            ]),
                                           ),
-                                        )
-                                      ]),
-                                    ),
-                                  );
-                                },
-                              )
-                            : CategoryShimmer(
-                                categoryController: categoryController),
-                      ),
+                                          Positioned.fill(
+                                            bottom: 35,
+                                            top: 100,
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 15),
+                                              child: Container(
+                                                width: 50,
+                                                height: 20,
+                                                decoration: BoxDecoration(
+                                                    color: Theme.of(context)
+                                                        .primaryColor,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            25)),
+                                                child: Center(
+                                                    child: Text(
+                                                  'New'.tr,
+                                                  style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.white),
+                                                )),
+                                              ),
+                                            ),
+                                          )
+                                        ]),
+                                      ),
+                                    );
+                                  },
+                                )
+                              : Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: ListView.builder(
+                                    itemCount: 4,
+                                    padding: const EdgeInsets.only(
+                                        left: Dimensions.paddingSizeSmall),
+                                    physics: const BouncingScrollPhysics(),
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder: (context, index) {
+                                      return Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 1),
+                                        child: Stack(children: [
+                                          SizedBox(
+                                            width: 100,
+                                            child: Column(children: [
+                                              Container(
+                                                height: 110,
+                                                width: 110,
+                                                decoration: BoxDecoration(
+                                                  color: Colors.grey.shade200,
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                ),
+                                                margin: EdgeInsets.only(
+                                                  left: index == 0
+                                                      ? 0
+                                                      : Dimensions
+                                                          .paddingSizeExtraSmall,
+                                                  right: Dimensions
+                                                      .paddingSizeExtraSmall,
+                                                ),
+                                              ),
+                                              const SizedBox(
+                                                  height: Dimensions
+                                                      .paddingSizeSmall),
+                                              Padding(
+                                                padding: EdgeInsets.only(
+                                                    right: index == 0
+                                                        ? Dimensions
+                                                            .paddingSizeExtraSmall
+                                                        : 0),
+                                                child: Text(
+                                                  '',
+                                                  style: robotoMedium.copyWith(
+                                                      fontSize: 20),
+                                                  maxLines: 2,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                            ]),
+                                          ),
+                                        ]),
+                                      );
+                                    },
+                                  ),
+                                )),
                     ),
                     // categoryController.categoryList != null
                     //     ? Container(
@@ -386,7 +446,8 @@ class CategoryAllShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 75,
+      height: 150,
+      width: 200,
       child: Padding(
         padding: const EdgeInsets.only(right: Dimensions.paddingSizeSmall),
         child: Shimmer(

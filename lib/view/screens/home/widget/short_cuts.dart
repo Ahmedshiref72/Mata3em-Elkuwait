@@ -51,7 +51,7 @@ class _Shortcuts2State extends State<Shortcuts2> {
                   padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                   child: Row(
                     children: [
-                      Text('shortCuts'.tr,
+                      Text('ShortCuts'.tr,
                           style: robotoMedium.copyWith(
                               fontSize: Dimensions.fontSizeLarge)),
                     ],
