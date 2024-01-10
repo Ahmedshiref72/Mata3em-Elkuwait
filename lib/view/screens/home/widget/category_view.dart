@@ -54,95 +54,95 @@ class CategoryView extends StatelessWidget {
                                       child: InkWell(
                                         onTap: () => Get.toNamed(
                                             RouteHelper.getCategoryProductRoute(
-                                          categoryController
-                                              .categoryList![index].id,
-                                          categoryController
-                                              .categoryList![index].name!,
-                                        )),
-                                        child: Stack(children: [
-                                          SizedBox(
-                                            width: 100,
-                                            child: Column(children: [
-                                              Container(
-                                                height: 110,
-                                                width: 110,
-                                                decoration: BoxDecoration(
-                                                  color: Colors.grey.shade200,
-                                                  borderRadius:
-                                                      BorderRadius.circular(10),
+                                              categoryController
+                                                  .categoryList![index].id,
+                                              categoryController
+                                                  .categoryList![index].name!,
+                                            )),
+                                        child: Column(
+                                          children: [
+                                            Stack(
+                                              children: [
+                                                Column(
+                                                  children: [
+                                                    Container(
+                                                      height: 110,
+                                                      width: 110,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                        Colors.grey.shade200,
+                                                        borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                      ),
+                                                      margin: EdgeInsets.only(
+                                                        left: index == 0
+                                                            ? 0
+                                                            : Dimensions
+                                                            .paddingSizeExtraSmall,
+                                                        right: Dimensions
+                                                            .paddingSizeExtraSmall,
+                                                      ),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                        BorderRadius.circular(
+                                                            Dimensions
+                                                                .radiusSmall),
+                                                        child: CustomImage(
+                                                          image:
+                                                          '${Get.find<SplashController>().configModel!.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image}',
+                                                          height: 120,
+                                                          width: 120,
+                                                          fit: BoxFit.contain,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    const SizedBox(
+                                                        height: Dimensions
+                                                            .paddingSizeSmall),
+                                                  ],
                                                 ),
-                                                margin: EdgeInsets.only(
-                                                  left: index == 0
-                                                      ? 0
-                                                      : Dimensions
-                                                          .paddingSizeExtraSmall,
-                                                  right: Dimensions
-                                                      .paddingSizeExtraSmall,
-                                                ),
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          Dimensions
-                                                              .radiusSmall),
-                                                  child: CustomImage(
-                                                    image:
-                                                        '${Get.find<SplashController>().configModel!.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image}',
-                                                    height: 120,
-                                                    width: 120,
-                                                    fit: BoxFit.contain,
-                                                  ),
-                                                ),
-                                              ),
-                                              const SizedBox(
-                                                  height: Dimensions
-                                                      .paddingSizeSmall),
-                                              Padding(
-                                                padding: EdgeInsets.only(
-                                                    right: index == 0
-                                                        ? Dimensions
-                                                            .paddingSizeExtraSmall
-                                                        : 0),
-                                                child: Text(
-                                                  categoryController
-                                                      .categoryList![index]
-                                                      .name!,
-                                                  style: robotoMedium.copyWith(
-                                                      fontSize: 20),
-                                                  maxLines: 2,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.center,
-                                                ),
-                                              ),
-                                            ]),
-                                          ),
-                                          Positioned.fill(
-                                            bottom: 35,
-                                            top: 100,
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 15),
-                                              child: Container(
-                                                width: 50,
-                                                height: 20,
-                                                decoration: BoxDecoration(
-                                                    color: Theme.of(context)
-                                                        .primaryColor,
-                                                    borderRadius:
+                                                Positioned.fill(
+                                                  bottom: -0,
+                                                  top: 100,
+                                                  left: 15,
+                                                  right: 15,
+                                                  child: Container(
+                                                    decoration: BoxDecoration(
+                                                        color: Theme.of(context)
+                                                            .primaryColor,
+                                                        borderRadius:
                                                         BorderRadius.circular(
                                                             25)),
-                                                child: Center(
-                                                    child: Text(
-                                                  'New'.tr,
-                                                  style: TextStyle(
-                                                      fontSize: 12,
-                                                      color: Colors.white),
-                                                )),
+                                                    child: Center(
+                                                        child: Text(
+                                                          'New'.tr,
+                                                          style: const TextStyle(
+                                                              fontSize: 12,
+                                                              color: Colors.white),
+                                                        )),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsets.only(
+                                                  right: index == 0
+                                                      ? Dimensions
+                                                      .paddingSizeExtraSmall
+                                                      : 0),
+                                              child: Text(
+                                                categoryController
+                                                    .categoryList![index].name!,
+                                                style: robotoMedium.copyWith(
+                                                    fontSize: 20),
+                                                maxLines: 2,
+                                                overflow: TextOverflow.ellipsis,
+                                                textAlign: TextAlign.center,
                                               ),
                                             ),
-                                          )
-                                        ]),
+                                          ],
+                                        ),
                                       ),
                                     );
                                   },
