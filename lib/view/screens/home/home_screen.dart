@@ -13,7 +13,6 @@ import 'package:efood_multivendor/controller/user_controller.dart';
 import 'package:efood_multivendor/data/model/response/config_model.dart';
 import 'package:efood_multivendor/helper/responsive_helper.dart';
 import 'package:efood_multivendor/helper/route_helper.dart';
-import 'package:efood_multivendor/theme/category_view.dart';
 import 'package:efood_multivendor/util/dimensions.dart';
 import 'package:efood_multivendor/util/styles.dart';
 import 'package:efood_multivendor/view/base/paginated_list_view.dart';
@@ -29,6 +28,7 @@ import 'package:efood_multivendor/view/screens/home/widget/item_campaign_view.da
 import 'package:efood_multivendor/view/screens/home/widget/near_by_button_view.dart';
 import 'package:efood_multivendor/view/screens/home/widget/popular_food_view.dart';
 import 'package:efood_multivendor/view/screens/home/widget/popular_restaurant_view.dart';
+import 'package:efood_multivendor/view/screens/home/widget/short_cuts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -10,8 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 
-import '../controller/auth_controller.dart';
-import '../view/screens/favourite/favourite_screen.dart';
+import '../../../../controller/auth_controller.dart';
+import '../../favourite/favourite_screen.dart';
 
 class Shortcuts2 extends StatefulWidget {
   const Shortcuts2({Key? key}) : super(key: key);
@@ -27,7 +27,6 @@ class _Shortcuts2State extends State<Shortcuts2> {
     Icons.favorite_outlined,
     Icons.shopping_cart,
     Icons.energy_savings_leaf,
-    // Add more icons as needed
   ];
 
   get searchController => null;

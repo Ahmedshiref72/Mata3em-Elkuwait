@@ -59,54 +59,86 @@ class CategoryView extends StatelessWidget {
                                         categoryController
                                             .categoryList![index].name!,
                                       )),
-                                      child: SizedBox(
-                                        width: 100,
-                                        child: Column(children: [
-                                          Container(
-                                            height: 120,
-                                            width: 120,
-                                            margin: EdgeInsets.only(
-                                              left: index == 0
-                                                  ? 0
-                                                  : Dimensions
-                                                      .paddingSizeExtraSmall,
-                                              right: Dimensions
-                                                  .paddingSizeExtraSmall,
-                                            ),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(
-                                                      Dimensions.radiusSmall),
-                                              child: CustomImage(
-                                                image:
-                                                    '${Get.find<SplashController>().configModel!.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image}',
-                                                height: 120,
-                                                width: 120,
-                                                fit: BoxFit.contain,
+                                      child: Stack(children: [
+                                        SizedBox(
+                                          width: 100,
+                                          child: Column(children: [
+                                            Container(
+                                              height: 110,
+                                              width: 110,
+                                              decoration: BoxDecoration(
+                                                color: Colors.grey.shade200,
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                              ),
+                                              margin: EdgeInsets.only(
+                                                left: index == 0
+                                                    ? 0
+                                                    : Dimensions
+                                                        .paddingSizeExtraSmall,
+                                                right: Dimensions
+                                                    .paddingSizeExtraSmall,
+                                              ),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        Dimensions.radiusSmall),
+                                                child: CustomImage(
+                                                  image:
+                                                      '${Get.find<SplashController>().configModel!.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image}',
+                                                  height: 120,
+                                                  width: 120,
+                                                  fit: BoxFit.contain,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          const SizedBox(
-                                              height: Dimensions
-                                                  .paddingSizeExtraSmall),
-                                          Padding(
-                                            padding: EdgeInsets.only(
-                                                right: index == 0
-                                                    ? Dimensions
-                                                        .paddingSizeExtraSmall
-                                                    : 0),
-                                            child: Text(
-                                              categoryController
-                                                  .categoryList![index].name!,
-                                              style: robotoMedium.copyWith(
-                                                  fontSize: 20),
-                                              maxLines: 2,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.center,
+                                            const SizedBox(
+                                                height: Dimensions
+                                                    .paddingSizeSmall),
+                                            Padding(
+                                              padding: EdgeInsets.only(
+                                                  right: index == 0
+                                                      ? Dimensions
+                                                          .paddingSizeExtraSmall
+                                                      : 0),
+                                              child: Text(
+                                                categoryController
+                                                    .categoryList![index].name!,
+                                                style: robotoMedium.copyWith(
+                                                    fontSize: 20),
+                                                maxLines: 2,
+                                                overflow: TextOverflow.ellipsis,
+                                                textAlign: TextAlign.center,
+                                              ),
+                                            ),
+                                          ]),
+                                        ),
+                                        Positioned.fill(
+                                          bottom: 35,
+                                          top: 100,
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 15),
+                                            child: Container(
+                                              width: 50,
+                                              height: 20,
+                                              decoration: BoxDecoration(
+                                                  color: Theme.of(context)
+                                                      .primaryColor,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          25)),
+                                              child: Center(
+                                                  child: Text(
+                                                'New'.tr,
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Colors.white),
+                                              )),
                                             ),
                                           ),
-                                        ]),
-                                      ),
+                                        )
+                                      ]),
                                     ),
                                   );
                                 },
@@ -115,140 +147,140 @@ class CategoryView extends StatelessWidget {
                                 categoryController: categoryController),
                       ),
                     ),
-                    categoryController.categoryList != null
-                        ? Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 260,
-                            child: GridView.builder(
-                              physics: const NeverScrollableScrollPhysics(),
-                              shrinkWrap: true,
-                              gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
-                                mainAxisSpacing: 10,
-                                crossAxisCount:
-                                    ResponsiveHelper.isDesktop(context)
-                                        ? 6
-                                        : ResponsiveHelper.isTab(context)
-                                            ? 2
-                                            : 2,
-                                childAspectRatio: (2 / 1.4),
-                              ),
-                              padding: const EdgeInsets.all(1),
-                              itemCount:
-                                  categoryController.categoryList!.length > 6
-                                      ? 4
-                                      : categoryController.categoryList!.length,
-                              itemBuilder: (context, index) {
-                                return Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(horizontal: 0),
-                                  child: InkWell(
-                                    onTap: () => Get.toNamed(
-                                        RouteHelper.getCategoryProductRoute(
-                                      categoryController
-                                          .categoryList![index].id,
-                                      categoryController
-                                          .categoryList![index].name!,
-                                    )),
-                                    child: SizedBox(
-                                      child: Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              .45,
-                                          margin: EdgeInsets.only(
-                                            left: Dimensions
-                                                .paddingSizeExtraSmall,
-                                            right: Dimensions
-                                                .paddingSizeExtraSmall,
-                                          ),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              color: Colors.grey.shade200,
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                            ),
-                                            child: Stack(
-                                              children: [
-                                                Column(
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              top: 20,
-                                                              right: 10,
-                                                              left: 10.0),
-                                                      child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            categoryController
-                                                                .categoryList![
-                                                                    index]
-                                                                .name!,
-                                                            style: robotoMedium
-                                                                .copyWith(
-                                                                    fontSize:
-                                                                        18),
-                                                            maxLines: 1,
-                                                            overflow:
-                                                                TextOverflow
-                                                                    .ellipsis,
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                          ),
-                                                          const SizedBox(
-                                                              height: 15),
-                                                          Container(
-                                                            width: 50,
-                                                            height: 20,
-                                                            decoration: BoxDecoration(
-                                                                color: Theme.of(
-                                                                        context)
-                                                                    .primaryColor,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            25)),
-                                                            child: Center(
-                                                                child: Text(
-                                                              'New'.tr,
-                                                              style: TextStyle(
-                                                                  fontSize: 12,
-                                                                  color: Colors
-                                                                      .white),
-                                                            )),
-                                                          )
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.9, 0.2),
-                                                  child: CustomImage(
-                                                    image:
-                                                        '${Get.find<SplashController>().configModel!.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image}',
-                                                    height: 80,
-                                                    width: 80,
-                                                    fit: BoxFit.contain,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          )),
-                                    ),
-                                  ),
-                                );
-                              },
-                            ),
-                          )
-                        : CategoryAllShimmer(
-                            categoryController: categoryController),
+                    // categoryController.categoryList != null
+                    //     ? Container(
+                    //         width: MediaQuery.of(context).size.width,
+                    //         height: 260,
+                    //         child: GridView.builder(
+                    //           physics: const NeverScrollableScrollPhysics(),
+                    //           shrinkWrap: true,
+                    //           gridDelegate:
+                    //               SliverGridDelegateWithFixedCrossAxisCount(
+                    //             mainAxisSpacing: 10,
+                    //             crossAxisCount:
+                    //                 ResponsiveHelper.isDesktop(context)
+                    //                     ? 6
+                    //                     : ResponsiveHelper.isTab(context)
+                    //                         ? 2
+                    //                         : 2,
+                    //             childAspectRatio: (2 / 1.4),
+                    //           ),
+                    //           padding: const EdgeInsets.all(1),
+                    //           itemCount:
+                    //               categoryController.categoryList!.length > 6
+                    //                   ? 4
+                    //                   : categoryController.categoryList!.length,
+                    //           itemBuilder: (context, index) {
+                    //             return Padding(
+                    //               padding:
+                    //                   const EdgeInsets.symmetric(horizontal: 0),
+                    //               child: InkWell(
+                    //                 onTap: () => Get.toNamed(
+                    //                     RouteHelper.getCategoryProductRoute(
+                    //                   categoryController
+                    //                       .categoryList![index].id,
+                    //                   categoryController
+                    //                       .categoryList![index].name!,
+                    //                 )),
+                    //                 child: SizedBox(
+                    //                   child: Container(
+                    //                       width: MediaQuery.of(context)
+                    //                               .size
+                    //                               .width *
+                    //                           .45,
+                    //                       margin: EdgeInsets.only(
+                    //                         left: Dimensions
+                    //                             .paddingSizeExtraSmall,
+                    //                         right: Dimensions
+                    //                             .paddingSizeExtraSmall,
+                    //                       ),
+                    //                       child: Container(
+                    //                         decoration: BoxDecoration(
+                    //                           color: Colors.grey.shade200,
+                    //                           borderRadius:
+                    //                               BorderRadius.circular(10),
+                    //                         ),
+                    //                         child: Stack(
+                    //                           children: [
+                    //                             Column(
+                    //                               children: [
+                    //                                 Padding(
+                    //                                   padding:
+                    //                                       const EdgeInsets.only(
+                    //                                           top: 20,
+                    //                                           right: 10,
+                    //                                           left: 10.0),
+                    //                                   child: Column(
+                    //                                     crossAxisAlignment:
+                    //                                         CrossAxisAlignment
+                    //                                             .start,
+                    //                                     children: [
+                    //                                       Text(
+                    //                                         categoryController
+                    //                                             .categoryList![
+                    //                                                 index]
+                    //                                             .name!,
+                    //                                         style: robotoMedium
+                    //                                             .copyWith(
+                    //                                                 fontSize:
+                    //                                                     18),
+                    //                                         maxLines: 1,
+                    //                                         overflow:
+                    //                                             TextOverflow
+                    //                                                 .ellipsis,
+                    //                                         textAlign: TextAlign
+                    //                                             .center,
+                    //                                       ),
+                    //                                       const SizedBox(
+                    //                                           height: 15),
+                    //                                       Container(
+                    //                                         width: 50,
+                    //                                         height: 20,
+                    //                                         decoration: BoxDecoration(
+                    //                                             color: Theme.of(
+                    //                                                     context)
+                    //                                                 .primaryColor,
+                    //                                             borderRadius:
+                    //                                                 BorderRadius
+                    //                                                     .circular(
+                    //                                                         25)),
+                    //                                         child: Center(
+                    //                                             child: Text(
+                    //                                           'New'.tr,
+                    //                                           style: TextStyle(
+                    //                                               fontSize: 12,
+                    //                                               color: Colors
+                    //                                                   .white),
+                    //                                         )),
+                    //                                       )
+                    //                                     ],
+                    //                                   ),
+                    //                                 ),
+                    //                               ],
+                    //                             ),
+                    //                             Align(
+                    //                               alignment:
+                    //                                   AlignmentDirectional(
+                    //                                       0.9, 0.2),
+                    //                               child: CustomImage(
+                    //                                 image:
+                    //                                     '${Get.find<SplashController>().configModel!.baseUrls!.categoryImageUrl}/${categoryController.categoryList![index].image}',
+                    //                                 height: 80,
+                    //                                 width: 80,
+                    //                                 fit: BoxFit.contain,
+                    //                               ),
+                    //                             ),
+                    //                           ],
+                    //                         ),
+                    //                       )),
+                    //                 ),
+                    //               ),
+                    //             );
+                    //           },
+                    //         ),
+                    //       )
+                    //     : CategoryAllShimmer(
+                    //         categoryController: categoryController),
                     ResponsiveHelper.isMobile(context)
                         ? const SizedBox()
                         : categoryController.categoryList != null
