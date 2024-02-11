@@ -1,7 +1,7 @@
 # مطاعم الكويت
 
 
->eFood is a Multi Branch supported food delivery restaurant management system that comes with the user app, website and delivery man app. With this powerful system, you will get a powerful admin panel built with Laravel Framework that will help you manage the whole system smartly which accelerates your restaurant business.
+>مطاعم الكويت is a Multi Branch supported food delivery restaurant management system that comes with the user app, website and delivery man app. With this powerful system, you will get a powerful admin panel built with Laravel Framework that will help you manage the whole system smartly which accelerates your restaurant business.
 
 
 
