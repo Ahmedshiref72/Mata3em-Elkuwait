@@ -11,115 +11,45 @@
 ## Screenshots
 <table width="100%">
   <tr>
-    <td width="33.3%" align="center">
-splash-1   
-    </td>
-        <td width="33.3%" align="center">
-       onboarding  1
-    </td>
-    <td width="33.3%" align="center">
-     onboarding  2
-    </td>
+
 
   </tr>
   <tr>
-  <td width="33.3%"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/52ba7f5c-77e3-440e-9cf2-24f3c6c15e33"/></td>
-     <td width="33.3%"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/a3b47b72-b00a-4b96-b3e6-558f7b7ee4b8"/></td>
-  <td width="33.3%"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/27e6d092-9976-4a18-bb8f-619367dd4d73"/></td>
+  <td width="33.3%"><img src="https://github.com/Ahmedshiref72/talabat_sweets/assets/103084673/503d261b-b335-4ec6-81dd-d9d94e470c8e"/></td>
+     <td width="33.3%"><img src="https://github.com/Ahmedshiref72/talabat_sweets/assets/103084673/9f7fcf3d-02ec-4ec9-92a1-c2768dc7fb23"/></td>
+  <td width="33.3%"><img src="https://github.com/Ahmedshiref72/talabat_sweets/assets/103084673/47499e30-c339-4a93-8c1f-df6be62f7b62"/></td>
  
   </tr>
   <tr>
-    <td width="33.3%" align="center">
-       onboarding 3
-    </td>
-        <td width="33.3%" align="center">
-     sign in
-    </td>
-        <td width="33.3%" align="center">
-      edit account for admin
-    </td>
   </tr>
   <tr>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/7160ea94-b53d-4382-beb6-083c828bfab1"/></td>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/a80efaf2-a0e3-4852-991a-00125c9ea03b"/></td>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/a88cc347-4585-43be-aa38-1a355f62a4c5"/></td>
+  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/talabat_sweets/assets/103084673/7601b981-b9a9-43b8-b16f-b55c1b5e5fc1"/></td>
+  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/talabat_sweets/assets/103084673/719836a5-2a8f-4be8-8dbb-faef78e9c5b8"/></td>
+  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/talabat_sweets/assets/103084673/924a5d4b-c624-4f17-861f-f374a42ce7d4"/></td>
   </tr>
    <tr>
-    <td width="33.3%" align="center">
-       add new patient for admin
-    </td>
-        <td width="33.3%" align="center">
-      add new room for admin
-    </td>
-        <td width="33.3%" align="center">
-    Doctor Home Screen
-    </td>
+  
   </tr>
   <tr>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/c6c801bb-4bd0-477a-bac8-bdc35a371039"/></td>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/f28a0f12-ec55-40a7-b2ed-78048afb2539"/></td>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/68399f9c-39e5-40d2-8349-0c616cd2d10e"/></td>
+  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/talabat_sweets/assets/103084673/14fd14e4-b50a-4957-bb99-6213b7822fd0"/></td>
+  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/talabat_sweets/assets/103084673/62d4ca61-896c-4b5e-bbc2-c7eb4fa6e15c"/></td>
+  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/talabat_sweets/assets/103084673/75320f74-6c51-4869-b051-41360978a790"/></td>
   </tr>
     <tr>
-    <td width="33.3%" align="center">
-         Patient's Details Screen (Doctor)
-    </td>
-        <td width="33.3%" align="center">
-     add recored for doctor
-    </td>
-        <td width="33.3%" align="center">
-      Doctor Search Screen
-    </td>
+   
   </tr>
   <tr>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/78e5c9e4-fadb-42dc-a951-78742ffad59f"/></td>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/679172d9-0511-4b8e-8d5b-b89d1983d607"/></td>
-  <td width="100%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/22b46a4b-59f4-4eac-9da4-ab8e74255a18"/></td>
+  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/talabat_sweets/assets/103084673/95962cde-f599-46d6-b1f3-2d87daeab0a5"/></td>
+  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/talabat_sweets/assets/103084673/36856d02-7f6a-4b67-a2f8-a9cadcd69b9f"/></td>
+  <td width="100%" align="center"><img src="https://github.com/Ahmedshiref72/talabat_sweets/assets/103084673/f5626e4d-781f-4495-bb4b-ae8dd6c844b8"/></td>
      </tr>
     <tr>
-    <td width="33.3%" align="center">
-           patient details
-    </td>
-        <td width="33.3%" align="center">
-      Doctor Notification Screen
-    </td>
-        <td width="33.3%" align="center">
-      Doctor Profile Screen
-    </td>
+  
   </tr>
   <tr>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/15b94b6c-fbd6-4c6c-a984-da528b485c24"/></td>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/79854dc2-a4a0-4e54-afb1-498be70e5cb9"/></td>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/099e7bd9-f995-4fd6-a81f-aa7e6ceb1092"/></td>
-    <tr>
-    <td width="33.3%" align="center">
-       search for patient   
-    </td>
-        <td width="33.3%" align="center">
-     room information
-    </td>
-        <td width="33.3%" align="center">
-      Chatting Room
-    </td>
-  </tr>
-  <tr>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/59d71a20-c97a-43f0-a888-31fba9a0b94a"/></td>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/fbbef921-5211-4952-8424-567b607ddbd8"/></td>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/212d58aa-6027-414a-8d6c-41491da14d62"/></td>
-         </tr>
-         </tr>
-    <tr>
-    <td width="33.3%" align="center">
-         search for check out
-    </td>
-        <td width="33.3%" align="center">
-      ceck out 
-    </td>
-  </tr>
-  <tr>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/425281e6-d9b3-4c5b-b917-b701ed18caf6"/></td>
-  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/Tele-Doctor/assets/103084673/5638bab3-7328-43b7-a7f9-0e4fa61d4219"/></td>
- 
+  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/talabat_sweets/assets/103084673/6af8d57b-7a8e-4ece-90a7-828a5b84e1f2"/></td>
+  <td width="33.3%" align="center"><img src="https://github.com/Ahmedshiref72/talabat_sweets/assets/103084673/7eb672fe-b07d-401e-bc21-47e513b97d99"/></td>
+   
   </tr>
  
   
