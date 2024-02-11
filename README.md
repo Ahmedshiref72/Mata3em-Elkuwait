@@ -6,7 +6,7 @@
 
 
 ## Download App
-<a href="https://github.com/Ahmedshiref72/Tele-Doctor/releases/download/v1/tele.doctor.apk"><img src="https://playerzon.com/asset/download.png" width="200"></img></a>
+<a href="https://github.com/Ahmedshiref72/Mata3em-Elkuwait/releases/download/v1/app-release.apk"><img src="https://playerzon.com/asset/download.png" width="200"></img></a>
 
 ## Screenshots
 <table width="100%">
